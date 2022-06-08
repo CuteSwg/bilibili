@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: test
+ #devtools
+  devtools:
+    restart:
+      enabled: true
+
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.swg.dao
+
