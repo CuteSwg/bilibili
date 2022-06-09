@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.swg.dao.User_infoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.swg.entity.User_info">
+        <id column="id" property="id" />
+        <result column="userId" property="userId" />
+        <result column="nick" property="nick" />
+        <result column="avatar" property="avatar" />
+        <result column="sign" property="sign" />
+        <result column="gender" property="gender" />
+        <result column="birth" property="birth" />
+        <result column="createTime" property="createTime" />
+        <result column="updateTime" property="updateTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, userId, nick, avatar, sign, gender, birth, createTime, updateTime
+    </sql>
+
+</mapper>
