@@ -1,10 +1,8 @@
 package com.swg.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.time.LocalDateTime;
-import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -64,13 +62,13 @@ public class UserInfo implements Serializable {
     /**
      * 创建时间
      */
-    @TableField("createTime")
+    @TableField(value = "createTime",fill = FieldFill.INSERT)
     private LocalDateTime createTime;
 
     /**
      * 更新时间
      */
-    @TableField("updateTime")
+    @TableField(value = "updateTime",fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime updateTime;
 
 
