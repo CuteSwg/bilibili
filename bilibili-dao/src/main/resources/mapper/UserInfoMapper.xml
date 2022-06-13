@@ -24,5 +24,17 @@
         where
         userId = #{userId}
     </update>
+    
+    <select id="selectUserInfoByUserIds" resultType="com.swg.entity.UserInfo">
+        select * from t_user_info 
+        <where>
+            <if test="userIdList != null and userIdList.size > 0">
+            and userId in
+                        <foreach collection="userIdList" item="userId" index="index" open="(" close=")" separator=",">
+                            #{userId}
+                        </foreach>
+            </if>
+        </where>
+    </select>
 
 </mapper>

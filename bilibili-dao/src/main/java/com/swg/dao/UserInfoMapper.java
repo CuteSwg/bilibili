@@ -3,6 +3,10 @@ package com.swg.dao;
 import com.swg.entity.UserInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
+import java.util.Set;
 
 /**
  * <p>
@@ -20,4 +24,11 @@ public interface UserInfoMapper extends BaseMapper<UserInfo> {
      * @param userInfo
      */
     void updateUserInfo(UserInfo userInfo);
+
+    /**
+     * 通过集合查询userInfo
+     * @param followingIdSet 集合
+     * @return
+     */
+    List<UserInfo> selectUserInfoByUserIds(@Param("userIdList") Set<Integer> followingIdSet);
 }
