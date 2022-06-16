@@ -1,9 +1,9 @@
 package com.swg.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.swg.dao.UserMomentsMapper;
 import com.swg.entity.UserMoments;
-import com.swg.service.IUserMomentsService;
 import org.springframework.stereotype.Service;
 
 /**
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2022-06-13
  */
 @Service
-public class UserMomentsServiceImpl extends ServiceImpl<UserMomentsMapper, UserMoments> implements IUserMomentsService {
+public class UserMomentsServiceImpl extends ServiceImpl<UserMomentsMapper, UserMoments> implements IService<UserMoments> {
 
 }

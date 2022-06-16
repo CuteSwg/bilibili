@@ -230,7 +230,7 @@ public class CodeGenerator {
      */
     public static void main(String[] args) {
         // 执行
-        getAutoGenerator("t_user_moments").execute();
+        getAutoGenerator("t_file").execute();
     }
 
 }

@@ -1,7 +1,10 @@
 package com.swg.utils;
 
 import org.apache.commons.codec.digest.DigestUtils;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 
 /**
@@ -34,5 +37,17 @@ public class MD5Util {
 		} else {
 			return content.getBytes();
 		}
+	}
+
+	public static String getFileMD5(MultipartFile file)throws Exception{
+		InputStream ifs = file.getInputStream();
+		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+		byte[] buffer = new byte[1024];
+		int byteRead;
+		while ((byteRead = ifs.read(buffer)) > 0){
+			outputStream.write(buffer,0,byteRead);
+		}
+		ifs.close();
+		return DigestUtils.md5Hex(outputStream.toByteArray());
 	}
 }
